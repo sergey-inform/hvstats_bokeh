@@ -31,7 +31,7 @@ DATA_COLS = ("ts", "VMon0", "IMon0", "VMon1", "IMon1", "VMon2", "IMon2")
 source = ColumnDataSource(data=dict(ts=[], IMon1=[], VMon1=[]))
 source_static = ColumnDataSource(data=dict(ts=[], IMon1=[], VMon1=[]))
 
-tools = 'pan,reset,save,box_zoom, undo'
+tools = 'pan,reset,save,xbox_zoom,wheel_zoom, undo'
 #tools = 'pan,xbox_select,reset,save,box_zoom, undo'
 tools_secondary = 'pan,save,box_zoom,undo'
 
@@ -39,7 +39,7 @@ tools_secondary = 'pan,save,box_zoom,undo'
 #TODO: DatetimeTickFormatter
 
 
-plotV = figure(plot_width=900, plot_height=300, tools=tools, x_axis_type='datetime', active_drag="box_zoom")
+plotV = figure(plot_width=900, plot_height=300, tools=tools, x_axis_type='datetime', active_drag="xbox_zoom")
 
 plotI = figure(plot_width=900, plot_height=300, tools=tools_secondary, x_axis_type='datetime', x_range = plotV.x_range, active_drag='pan')
 
