@@ -15,6 +15,7 @@ THRESH = 0.5
 IFS = ';'  # Input field separator
 NONES = ["none", "-", "n/a"]
 prev_val = 0.0
+prev_ts = None
 
 
 def prline(line):
@@ -38,7 +39,10 @@ with fileinput.input() as input:
         if abs(val - prev_val) > THRESH:
             prline(line)
             prev_val = val
-            
+            prev_ts = ts
+
+if ts != prev_ts:
+    prline(line)
 
         
     
